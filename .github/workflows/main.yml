@@ -1,11 +1,12 @@
 on: [push]
 jobs:
   jmeter_job:
+  - name: Checkout
+      uses: actions/checkout@v3
     runs-on: ubuntu-latest
     name: JMeter Test Execution
     steps:      
-    - name: Checkout
-      uses: actions/checkout@v3
+    
 
     - name: Create reports directory
       run: mkdir reports
