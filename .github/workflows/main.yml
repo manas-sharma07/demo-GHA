@@ -11,11 +11,11 @@ jobs:
     - name: Create reports directory
       run: mkdir reports
       
-    - name: Run JMeter Tests
-      uses: ./
+    - name: PerfAction for JMeter
+      uses: QAInsights/PerfAction@v5.6.2
       with:
-        test-plan-path: ./Demo.jmx
-        args: "-e -o ./reports/html/"
+    # JMeter test plan to execute
+      test-plan-path: ./Demo.jmx    
         
     - name: Upload Results
       uses: actions/upload-artifact@v3
